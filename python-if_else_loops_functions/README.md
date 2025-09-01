@@ -1,0 +1,1 @@
+Learn python loop, function and if/else
