@@ -8,8 +8,9 @@ else:
     last = -(abs(number) % 10)
 
 if last > 5:
-    print("last digit of %s is %s and is greater than 5" %(number, last))
+    print("last digit of %s is %s and is greater than 5" % (number, last))
 elif last == 0:
-    print("last digit of %s is %s and is 0"% (number, last))
+    print("last digit of %s is %s and is 0" % (number, last))
 else:
-    print("last digit of %s is %s and is less than 6 and not 0" %(number, last))
+    print("last digit of %s is %s and is less than 6 and not 0" %
+          (number, last))
