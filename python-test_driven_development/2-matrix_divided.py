@@ -1,5 +1,26 @@
 #!/usr/bin/python3
+"""
+This module defines a function divide a matrix
+It checks that the input is a list of list of integers/floats,
+if the len of all list are the same
+and if the divide number is an integer or float and not 0
+Return a new matrix with the divid number
+"""
+
+
 def matrix_divided(matrix, div):
+    """Divide a matrix by a given number
+
+    Args:
+        matrix (list): the list of list
+        div (int, float): the divide number
+
+    Raises:
+        TypeError: If divide number is not float or integer
+        ZeroDivisionError: If divide number is 0
+        TypeError: If matrix is not a list of list of integer or float
+        TypeError: If len of each list is different
+    """
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
     if div == 0:
