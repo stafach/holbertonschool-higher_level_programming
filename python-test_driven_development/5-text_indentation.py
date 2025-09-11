@@ -17,10 +17,14 @@ def text_indentation(text):
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    for i in range(0, len(text)):
+    i = 0
+    while i < len(text):
         char = text[i]
-        print(char, end="")
         if char in "?:.":
+            print(char, end="")
             print("\n")
-            if i + 1 < len(text) and text[i + 1] == " ":
-                continue
+            while i + 1 < len(text) and text[i + 1] == " ":
+                i += 1
+        else:
+            print(char, end="")
+        i += 1
