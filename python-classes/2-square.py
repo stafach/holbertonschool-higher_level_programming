@@ -11,6 +11,14 @@ create a square
     def __init__(self, size=0):
         """
         initialize a square with a private size
+
+        Args:
+            self: the square
+            size (int): the size of the square
+
+        Raises:
+            TypeError: if size isn't an integer
+            ValueError: if size is negative
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
