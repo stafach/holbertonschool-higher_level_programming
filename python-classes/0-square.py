@@ -8,4 +8,3 @@ class Square:
     """
 create a square
     """
-    square = "{}"
