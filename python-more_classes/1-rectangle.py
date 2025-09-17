@@ -1,27 +1,24 @@
 #!/usr/bin/python3
 """
-This module create a classe named rectangle
+This module defines a class named Rectangle
 """
 
 
 class Rectangle:
     """
-create a rectangle
+    Class that defines a rectangle
     """
+
     def __init__(self, width=0, height=0):
         """
-        initialize a rectangle with a private size
+        Initialize a rectangle with optional width and height.
 
         Args:
-            width (int): the width of the rectangle
-            height (int): the height of the rectangle
-
-        Raises:
-            TypeError: if width or height aren't an integer
-            ValueError: if width or height is negative
+            width (int): the width of the rectangle (default 0).
+            height (int): the height of the rectangle (default 0).
         """
-        self._Rectangle__width = width
-        self._Rectangle__height = height
+        self.width = width    # goes through the setter
+        self.height = height  # goes through the setter
 
     @property
     def width(self):
@@ -29,9 +26,9 @@ create a rectangle
         Getter for the width attribute.
 
         Returns:
-            int: The width of the square.
+            int: The width of the rectangle.
         """
-        return self._Rectangle__width
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -39,7 +36,7 @@ create a rectangle
         Setter for the width attribute with validation.
 
         Args:
-            value (int): The new size of the square.
+            value (int): The new width of the rectangle.
 
         Raises:
             TypeError: if value is not an integer.
@@ -49,7 +46,7 @@ create a rectangle
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self._Rectangle__width = value
+        self.__width = value
 
     @property
     def height(self):
@@ -57,17 +54,17 @@ create a rectangle
         Getter for the height attribute.
 
         Returns:
-            int: The height of the square.
+            int: The height of the rectangle.
         """
-        return self._Rectangle__height
+        return self.__height
 
-    @width.setter
+    @height.setter
     def height(self, value):
         """
         Setter for the height attribute with validation.
 
         Args:
-            value (int): The new size of the square.
+            value (int): The new height of the rectangle.
 
         Raises:
             TypeError: if value is not an integer.
@@ -77,4 +74,4 @@ create a rectangle
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
-        self._Rectangle__height = value
+        self.__height = value
