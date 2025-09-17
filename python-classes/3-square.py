@@ -37,4 +37,3 @@ create a square
             int: The area of the square
             """
         return self._Square__size ** 2
-    
