@@ -20,8 +20,8 @@ create a square
             TypeError: if size isn't an integer
             ValueError: if size is negative
         """
-        self._Square__size = size
-        self._Square__position = position
+        self.__size = size
+        self.__position = position
 
     @property
     def size(self):
@@ -68,7 +68,7 @@ create a square
         Returns:
             tuple of int: The position of the square.
         """
-        return self._Square__position
+        return self.__position
 
     @position.setter
     def position(self, value):
@@ -85,7 +85,7 @@ create a square
             raise TypeError("position must be a tuple of 2 positive integers")
         if not all(isinstance(x, int) and x >= 0 for x in value):
             raise TypeError("position must be a tuple of 2 positive integers")
-        self._Square__position = value
+        self.__position = value
 
     def my_print(self):
         """
@@ -93,11 +93,11 @@ create a square
         """
         if self.size == 0:
             print("")
-        for x in range(0, self._Square__position[1]):
+        for x in range(0, self.__position[1]):
             print("")
 
         for i in range(0, self.size):
-            for y in range(0, self._Square__position[0]):
+            for y in range(0, self.__position[0]):
                 print(" ", end="")
             for j in range(0, self.size):
                 print("#", end="")
