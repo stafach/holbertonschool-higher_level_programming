@@ -93,6 +93,7 @@ create a square
         """
         if self.size == 0:
             print("")
+            return
         for x in range(0, self.__position[1]):
             print("")
 
@@ -101,4 +102,4 @@ create a square
                 print(" ", end="")
             for j in range(0, self.size):
                 print("#", end="")
-            print("")
+            print("",)
