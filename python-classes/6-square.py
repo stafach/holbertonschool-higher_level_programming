@@ -20,8 +20,8 @@ create a square
             TypeError: if size isn't an integer
             ValueError: if size is negative
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
