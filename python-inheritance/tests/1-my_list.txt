@@ -40,12 +40,12 @@ List with negative numbers:
 
 Passing None:
     >>> MyList(None)
-    Traceback (most recent call last):
+    Traceback(most recent call last):
         ...
     TypeError: 'NoneType' object is not iterable
 
 Passing an integer:
     >>> MyList(123)
-    Traceback (most recent call last):
+    Traceback(most recent call last):
         ...
     TypeError: 'int' object is not iterable
