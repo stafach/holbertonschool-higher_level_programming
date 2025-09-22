@@ -12,7 +12,7 @@ def is_same_class(obj, a_class):
         a_class: the class
 
     Returns:
-        True: if the object is an instance of the class
+        True: if the object is exactly an instance of the class
         False: if the object isn't an instance of the class
     """
     if type(obj) is a_class:
