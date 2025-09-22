@@ -12,5 +12,4 @@ class MyList(list):
         """
         prints the list, but sorted (ascending sort)
         """
-        if issubclass(MyList, list):
-            print(sorted(self))
+        print(sorted(self))
