@@ -47,14 +47,14 @@ class Circle(Shape):
             The area of the circle
         """
         r = self.radius ** 2
-        return r * pi
+        return abs(r * pi)
 
     def perimeter(self):
         """
         Return:
             The perimeter of the circle
         """
-        return self.radius * 2 * pi
+        return abs(self.radius * 2 * pi)
 
 
 class Rectangle(Shape):
