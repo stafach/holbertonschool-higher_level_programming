@@ -4,8 +4,7 @@ this module use http.server module for implementing web servers
 """
 
 
-from http.server import BaseHTTPRequestHandler
-import socketserver
+from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 
 
@@ -43,6 +42,6 @@ class my_server(BaseHTTPRequestHandler):
 
 PORT = 8000
 
-with socketserver.TCPServer(("", PORT), my_server) as httpd:
+with HTTPServer(("", PORT), my_server) as httpd:
     print("serving at port", PORT)
     httpd.serve_forever()
