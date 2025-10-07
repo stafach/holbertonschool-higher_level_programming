@@ -54,6 +54,6 @@ class my_server(http.server.BaseHTTPRequestHandler):
 
 PORT = 8000
 
-with http.server.HTTPServer(("", PORT), my_server) as httpd:
-    print("serving at port", PORT)
-    httpd.serve_forever()
+httpd = http.server.HTTPServer(("", PORT), my_server)
+print("serving at port", PORT)
+httpd.serve_forever()
