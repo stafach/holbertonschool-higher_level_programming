@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-this module use http.server module for implementing web servers
+this module use http.server module for implementing web servers.
+Create a subclass of BaseHTTPRequestHandler who implement GET.
 """
 
 
@@ -54,6 +55,12 @@ class my_server(http.server.BaseHTTPRequestHandler):
 
 PORT = 8000
 
-httpd = http.server.HTTPServer(("", PORT), my_server)
-print("serving at port", PORT)
-httpd.serve_forever()
+
+def run(server_class=http.server.HTTPServer, handler_class=my_server):
+    server_address = ('', 8000)
+    httpd = server_class(server_address, handler_class)
+    httpd.serve_forever()
+
+
+if __name__ == '__main__':
+    run()
