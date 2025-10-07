@@ -12,7 +12,7 @@ class my_server(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == "/":
             self.send_response(200)
-            self.send_header("Content-type", "text/html")
+            self.send_header("Content-type", "text/plain")
             self.end_headers()
             self.wfile.write(b"Hello, this is a simple API!")
 
@@ -30,12 +30,24 @@ class my_server(http.server.BaseHTTPRequestHandler):
 
         elif self.path == "/status":
             self.send_response(200)
-            self.send_header("Content-type", "text/html")
+            self.send_header("Content-type", "text/plain")
             self.end_headers()
             self.wfile.write(b"OK")
+
+        elif self.path == "/info":
+            sample_info = {
+                "version": 1.0,
+                "description": "A simple API built with http.server"
+            }
+            info = json.dumps(sample_info)
+            self.send_response(200)
+            self.send_header("Content-type", "application/json")
+            self.end_headers()
+            self.wfile.write(info.encode("utf-8"))
+
         else:
             self.send_response(404)
-            self.send_header("Content-type", "text/html")
+            self.send_header("Content-type", "text/plain")
             self.end_headers()
             self.wfile.write(b"page not found sorry")
 
