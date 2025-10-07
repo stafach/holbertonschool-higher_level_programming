@@ -14,7 +14,7 @@ def fetch_and_print_posts():
     print("Status Code: {}".format(JSON.status_code))
 
     if JSON.status_code == 200:
-        data = JSON.json()  # ici, c’est une LISTE de dictionnaires
+        data = JSON.json()
         for t in data:
             print(t["title"])
 
@@ -33,4 +33,5 @@ def fetch_and_save_posts():
 
         with open("posts.csv", "w", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=["id", "title", "body"])
+            writer.writeheader()
             writer.writerows(data_list)
