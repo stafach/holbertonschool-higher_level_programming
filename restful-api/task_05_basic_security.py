@@ -35,8 +35,8 @@ def index():
 
 @app.route("/login", methods=["POST"])
 def login():
-    username = request.json.get("username")
-    password = request.json.get("password")
+    username = request.json.get("username", None)
+    password = request.json.get("password", None)
     user = users.get(username)
     if not user or not check_password_hash(user["password"], password):
         return jsonify({"error": "Unauthorized"}), 401
