@@ -8,9 +8,7 @@ import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
-import pymysql
 
-pymysql.install_as_MySQLdb()
 
 if __name__ == "__main__":
     engine = create_engine(
@@ -21,7 +19,7 @@ if __name__ == "__main__":
     session = Session()
 
     states = session.query(State).first()
-    if states == None:
+    if states is None:
         print("Nothing")
     else:
         print("{}: {}".format(states.id, states.name))
