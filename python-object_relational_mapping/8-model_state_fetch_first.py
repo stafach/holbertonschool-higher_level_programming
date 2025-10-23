@@ -20,8 +20,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    try:
-        states = session.query(State).first()
-        print("{}: {}".format(states.id, states.name))
-    except Exception as e:
+    states = session.query(State).first()
+    if states == None:
         print("Nothing")
+    else:
+        print("{}: {}".format(states.id, states.name))
