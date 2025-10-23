@@ -9,7 +9,9 @@ import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
+import pymysql
 
+pymysql.install_as_MySQLdb()
 
 if __name__ == "__main__":
     engine = create_engine(
@@ -19,8 +21,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    delete_name = session.query(State).filter(State.name.like('%a%')).all()
+    delete_name = session.query(State).filter(State.name.like('%a%'))
 
-    for name in delete_name:
-        session.delete(name)
+    if delete_name:
+        for name in delete_name:
+            session.delete(name)
         session.commit()
