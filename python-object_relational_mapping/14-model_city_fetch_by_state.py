@@ -9,9 +9,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 from model_city import City
-import pymysql
-
-pymysql.install_as_MySQLdb()
 
 
 if __name__ == "__main__":
