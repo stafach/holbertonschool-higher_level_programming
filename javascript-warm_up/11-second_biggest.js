@@ -7,7 +7,7 @@ if (process.argv.length <= 3) {
   let second = 0;
 
   for (let i = 2; i < process.argv.length; i++) {
-    const num = process.argv[i];
+    const num = parseInt(process.argv[i], 10);
     if (num > max) {
       second = max;
       max = num;
