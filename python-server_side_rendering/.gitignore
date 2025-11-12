@@ -1,2 +1,4 @@
 SSR/
 __pycache__
+*.json
+*.csv
