@@ -1,14 +1,14 @@
 {% include "header.html" %}
 
 <h1>Items List</h1>
-{% if not items %}
-    <p>No items found</p>
+{% if items %}
+<ul>
+    {% for item in items %}
+    <li>{{ item }}</li>
+    {% endfor %}
+</ul>
 {% else %}
-    <ul>
-        {% for item in items %}
-            <li>{{ item }}</li>
-        {% endfor %}
-    </ul>
+<p>No items found</p>
 {% endif %}
 
 
