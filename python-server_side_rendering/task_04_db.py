@@ -42,9 +42,9 @@ def products():
     elif source == 'sql':
         try:
             conn = sqlite3.connect('products.db')
-            cur = conn.cursor()
-            cur.execute("SELECT * FROM Products")
-            data = cur.fetchall()
+            cursor = conn.cursor()
+            cursor.execute("SELECT * FROM Products")
+            data = cursor.fetchall()
             data = [{'id': row[0], 'name': row[1], 'category': row[2], 'price': row[3]} for row in data]
             conn.close()
         except sqlite3.Error as e:
