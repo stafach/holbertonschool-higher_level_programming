@@ -1,0 +1,10 @@
+<h1>Items List</h1>
+<ul>
+    {% if not items %}
+        <li>No items found</li>
+    {% else %}
+        {% for item in items %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    {% endif %}
+</ul>
